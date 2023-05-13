@@ -16,7 +16,7 @@ func main() {
 	}
 	fmt.Println(m)
 	for a, stu := range stus {
-		m[stu.name] = &stu
+		m[stu.name] = &stu //将stu中的name元素放到里面变成键值，然后值则是附上函数中的stu的地址。所以会出现一个问题，stu的地址是相同的。
 		fmt.Println(m, a)
 	}
 	for k, v := range m {
