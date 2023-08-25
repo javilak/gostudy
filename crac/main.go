@@ -83,14 +83,14 @@ func main() {
 	if err != nil {
 		fmt.Println("错误")
 	}
-	name := strings.TrimSuffix(input, "\r\n")
+	name := strings.TrimSuffix(input, "\n")
 	fmt.Println("ID:")
 	ID := bufio.NewReader(os.Stdin)
 	idcard, err := ID.ReadString('\n')
 	if err != nil {
 		fmt.Println("错误")
 	}
-	num := strings.TrimSuffix(idcard, "\r\n")
+	num := strings.TrimSuffix(idcard, "\n")
 	check(name, num)
 }
 
@@ -110,10 +110,8 @@ func check(name string, ID string) {
 	req.Header.Set("Accept", "*/*")
 	req.Header.Set("Accept-Language", "zh-CN,zh;q=0.9")
 	req.Header.Set("Content-Type", "application/json; chartset=UTF-8")
-	req.Header.Set("Cookie", "jeesite.session.id=d9b95a3ae4e447679c26724baccb8673; JSESSIONID=FBE4B00BCD66152C5F6D65E4D3A0771A")
 	req.Header.Set("Origin", "http://82.157.138.16:8091")
 	req.Header.Set("Proxy-Connection", "keep-alive")
-	req.Header.Set("Referer", "http://82.157.138.16:8091/CRAC/crac/pages/list_cert.html?name=6a2P5paH54aZ&certificateNo=&idCarNumber=NDQwMTAyMTk5OTEyMjIwNjMw")
 	req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36")
 	req.Header.Set("X-Requested-With", "XMLHttpRequest")
 	req.Header.Set("mm", "null")
